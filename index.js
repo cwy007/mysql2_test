@@ -15,7 +15,7 @@ connection.connect((err) => {
   console.log('Connected to the database.');
 });
 
-connection.query('SELECT * FROM customers', (err, results) => {
+connection.query('SELECT * FROM customers WHERE name LIKE ?', ['%李%'], (err, results) => {
   if (err) {
     console.error('Error executing query:', err);
     return;
